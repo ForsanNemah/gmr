@@ -13,7 +13,7 @@ $db_name=getmonyfromgmail;
 
 */
 $host=localhost;
-$db_name = 'mysql:host=localhost;dbname=u122541238_efg';
+$db_name = 'u122541238_efg';
 $db_user     = 'u122541238_efg_root';
 $db_password   = 'Forsan@2023';
 
