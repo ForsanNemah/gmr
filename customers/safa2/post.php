@@ -5,9 +5,9 @@ include 'init.php';
 
 
 
-echo "post";
 
-/*
+
+
 
 
 $username=$_POST['username'];
