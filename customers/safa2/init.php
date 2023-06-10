@@ -1,6 +1,6 @@
 <?php
 
-include '../gmr/connect.php';
+include '../../lp_init.php';
 
 
 
