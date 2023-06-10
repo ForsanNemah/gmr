@@ -1,6 +1,14 @@
 <?php
 
-session_start();
+include '../gmr/connect.php';
+
+
+
+ 
+
+
+
+
 
 $host="localhost";
 $db_user="root";

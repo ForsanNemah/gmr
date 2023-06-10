@@ -1,4 +1,5 @@
 <?php
+
 /*
 $database = 'mysql:host=localhost;dbname=getmonyfromgmail';
 $user     = 'root';
