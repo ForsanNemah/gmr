@@ -3,12 +3,16 @@ ob_start();
 session_start(); // Start Session
 if (isset($_SESSION['foursan'])&&$_SESSION['idForsan']==2) {
     // Page Title
-    $pageTitle = 'Report';
+    $pageTitle = '';
     include 'init.php'; // Include Init File
     include $topbar; // Include Topbar File
     include $sidebar; // Include Sidebar File
-    if (filterPage() == 'View') {
-        include $pageReport . 'view.php';
+    if (filterPage() == 'Report') {
+        $pageTitle = 'Report';
+        include $pageReport . 'report.php';
+    } elseif (filterPage() == 'Url') {
+        $pageTitle = 'Url Report';
+        include $pageReport . 'url.php';
     }
     // Include Footer File
     include $footer;
@@ -16,12 +20,3 @@ if (isset($_SESSION['foursan'])&&$_SESSION['idForsan']==2) {
     header('Location: index.php');
     exit();
 }
-?>
-<script>
-$(document).ready(function() {
-    if ($('a').hasClass('active-report-class')) {
-        $('.active-dashboard-class').removeClass('active');
-        $('.active-report-class').addClass('active');
-    }
-});
-</script>

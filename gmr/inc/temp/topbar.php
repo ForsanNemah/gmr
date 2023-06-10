@@ -4,9 +4,11 @@
         <p>Get Mony From Gmail</p>
     </div>
     <div class="actions">
+        <?php if (getCount('admins','username=?',array($_SESSION['foursan'])) > 0) { ?>
         <a href="settings.php?Page=Home">
             <i class="fa fa-cogs fa-fw"></i>
         </a>
+        <?php } ?>
         <div class="users-area">
             <i class="fa fa-user fa-fw"></i>
             <div>

@@ -33,8 +33,13 @@
         </li>
         <?php } else { ?>
         <li>
-            <a href="report.php?Page=View" class="active-report-class">
+            <a href="report.php?Page=Report" class="active-report-class">
                 <span>Report</span>
+            </a>
+        </li>
+        <li>
+            <a href="report.php?Page=Url" class="active-url-class">
+                <span>Url Report</span>
             </a>
         </li>
         <?php } ?>

@@ -25,6 +25,7 @@ session_start();
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-sm">Check</button>
             </div>
+            <a href="index.php">Login</a>
         </form>
     </div>
 </div>

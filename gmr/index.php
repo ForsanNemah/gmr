@@ -37,14 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Register Session User Name
         $_SESSION['foursan'] = $username;
         $_SESSION['idForsan'] = getItem('users', $username, 'username = ?', 'type');
-        header('location: report.php?Page=View');
+        header('location: report.php?Page=Report');
     }
 }
 
 if (isset($_SESSION['foursna'])&&$_SESSION['idForsan']==1) {
     redirectDashboard();
 } elseif (isset($_SESSION['foursna'])&&$_SESSION['idForsan']==2) {
-    header('location: report.php?Page=View');
+    header('location: report.php?Page=Report');
 }
 //
 ?>
