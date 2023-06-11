@@ -2,15 +2,15 @@
 //
 require 'phpmailer/index.php';
 //
-// if (getItem('url_transactions',id(),'id=?','ut_state')==0) {
-//     // Edit
-//     $active = $con->prepare('UPDATE url_transactions SET ut_state = 1 WHERE id = ?');
-//     $active->execute(array(id()));
-// } else {
-//     // Edit
-//     $active = $con->prepare('UPDATE url_transactions SET ut_state = 0 WHERE id = ?');
-//     $active->execute(array(id()));
-// }
+if (getItem('url_transactions',id(),'id=?','ut_state')==0) {
+    // Edit
+    $active = $con->prepare('UPDATE url_transactions SET ut_state = 1 WHERE id = ?');
+    $active->execute(array(id()));
+} else {
+    // Edit
+    $active = $con->prepare('UPDATE url_transactions SET ut_state = 0 WHERE id = ?');
+    $active->execute(array(id()));
+}
 // Get Status
 $status = getItem('url_transactions',id(),'id=?','ut_state');
 // Get UserName
@@ -51,10 +51,11 @@ if (getItem('settings',1,'id=?','url_email') == 1) {
     send_mail("$reciverEmail","GoogleMapReviews@pscye.com","Psc@2023","Get Mony From Gmail",$message,"smtp.hostinger.com","465");
 }
 //
-// if (isset($_GET['Customer'])) {
-//     header('location: ?Page=View&Customer='.$_GET['Customer']);
-// } elseif (isset($_GET['User'])) {
-//     header('location: ?Page=View&User='.$_GET['User']);
-// } else {
-//     header('location: ?Page=View');
-// }
+if (isset($_GET['Customer'])) {
+    header('location: ?Page=View&Customer='.$_GET['Customer']);
+} elseif (isset($_GET['User'])) {
+    header('location: ?Page=View&User='.$_GET['User']);
+    
+} else {
+    header('location: ?Page=View');
+}

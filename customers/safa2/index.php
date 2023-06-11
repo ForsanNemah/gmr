@@ -495,7 +495,17 @@ echo "<option value='$value'>$value</option>";
 
 
                                     <button id="send" type="submit" class="btn submit-btn">رفع التقييم   </button>
+                                    <br>
+                                    <br>
+                                    <br>
+                    
+                                    
                                 </form>
+                                
+                                <a href="../../gmr/index.php">
+                                    <button   class="btn btn-info"> انشاء حساب </button>
+
+                                    </a>
                             </div>
                         </div>
                     </div>
