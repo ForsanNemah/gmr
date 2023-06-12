@@ -15,7 +15,7 @@ $phone=$_POST['phone'];
 $url=$_POST['url'];
 $customer=$_POST['customer'];
 
-//echo $username.$phone.$url.$customer; 
+echo $username.$phone.$url.$customer."<br>"; 
 
 
 $sql="select *  from users  where username='".$username."'";
