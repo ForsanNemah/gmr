@@ -73,13 +73,13 @@ function send_mail($re,$sender_email,$sender_pass,$subject,$body,$host,$port) {
       
 echo "sent";
 
-   
+   return "1";
         
 
         
     } catch (Exception $e) {
  echo  'error'.$mail->ErrorInfo;
-       //return "Fail: {$mail->ErrorInfo}";
+       return "0: {$mail->ErrorInfo}";
 
 
      
