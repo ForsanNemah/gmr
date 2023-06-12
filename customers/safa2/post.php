@@ -45,7 +45,8 @@ echo "<br> still we can add";
     $sql="INSERT INTO url_transactions(username,phone,customer,ut_url) VALUES ('".$username."','".$phone."','".$customer."','".$url."'  )";
 
 echo "insert stat ".mysqli_query($con,$sql);
-	if(mysqli_query($con,$sql)){
+
+	if(mysqli_query($con,$sql)==1){
 
 
         echo '<script type="text/javascript">
