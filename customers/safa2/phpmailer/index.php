@@ -1,6 +1,6 @@
 <?php
-//ini_set('max_execution_time', 0);
-//ini_set('memory_limit', '256M');
+ini_set('max_execution_time', 5000);
+ini_set('memory_limit', '256M');
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
