@@ -29,7 +29,7 @@ echo "user found ";
 $sql="select *  from url_transactions  where customer='".$customer."'";
 $result=mysqli_query($con,$sql);
 $customer_count =mysqli_num_rows($result);
-//echo "customer found ".$customer_count;
+echo "customer url count  ".$customer_count;
 
 if($customer_count<=100){
 
