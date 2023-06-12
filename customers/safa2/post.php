@@ -6,9 +6,9 @@ include 'phpmailer/index.php';
 
 
 
-echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023","cccc","bbb","smtp.hostinger.com","465");
 
-/*
+
+
 
 $username=$_POST['username'];
 $phone=$_POST['phone'];
@@ -52,9 +52,9 @@ if($customer_count<=100){
 
        
 
-        echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
+        //echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
      
-
+        echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023","cccc","bbb","smtp.hostinger.com","465");
 	
 	
  
