@@ -431,7 +431,7 @@ include 'info.php';
 
 
                                     <div class="form-group" dir="rtl" hidden>
-                                        <input name="customer" type="text" class="form-control" placeholder=" " value ="safa2" required>
+                                        <input name="customer" type="text" class="form-control" placeholder=" " value ="<?php include 'info.php';echo $customer_user_name;?>" required>
                                     </div>
  
 
@@ -501,7 +501,7 @@ echo "<option value='$value'>$value</option>";
                     
                                     
                                 </form>
-                                
+
                                 <a href="../../gmr/index.php">
                                     <button   class="btn btn-info"> انشاء حساب </button>
 

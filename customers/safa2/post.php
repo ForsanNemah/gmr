@@ -2,7 +2,7 @@
 
 //echo "wwe";
 include 'init.php';
-
+include 'phpmailer/index.php';
 
 
 
@@ -46,6 +46,11 @@ if($customer_count<=100){
 
 
 	if(mysqli_query($con,$sql)){
+
+
+
+
+        send_mail("forsan20172017@gmail.com","ksa.kho.kart@gmail.com","Cyzzryfhptamxhrub",$customer,$url,"smtp.gmail.com","465");
 
 
         echo '<script type="text/javascript">

@@ -6,6 +6,8 @@ $ad_source="snap 1";
 
 $logo_h='100px';
 $logo_w='20px';
+$customer_name=' تقييمات المانيوم الصفا الدمام  ';
+$customer_user_name='safa2';
 //echo $ad_source;
 
 
@@ -66,9 +68,7 @@ $info = array(
 
 
  
-    "ev_logo_name"=>"    
-    
- تقييمات المانيوم الصفا الدمام      ",
+    "ev_logo_name"=>$customer_name,
 
 
     
