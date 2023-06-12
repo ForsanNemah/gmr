@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="panel-body">
                     <!------------------------ Raw ------------------------>
                     <div class="row">
+                        <!------------------------ Errors ------------------------>
                         <div class="col-12">
                             <?php
                             if (isset($errors) && !empty($errors)) {
@@ -74,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <?php echo $error ?>
                             </div>
                             <?php } } ?>
-                        </div>
+                        </div> <!-- Errors -->
                         <!------------------------ UserName ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">

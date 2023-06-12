@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Email Error
     if (empty($main)) {
         $errors[] = 'Enter Main Email';
-    } elseif (getCount('users', 'main_email = ?', array($main)) > 0) {
+    } elseif (getCount('users', 'main_email = ? and id != ?', array($main,id())) > 0) {
         $errors[] = 'Email Is Exists';
     }
     // Edit Informatio To Database
