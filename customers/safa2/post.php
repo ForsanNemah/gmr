@@ -44,14 +44,14 @@ echo "<br> still we can add";
 
     $sql="INSERT INTO url_transactions(username,phone,customer,ut_url) VALUES ('".$username."','".$phone."','".$customer."','".$url."'  )";
 
-echo "insert stat ".mysqli_query($con,$sql);
+//echo "insert stat ".mysqli_query($con,$sql);
 
-	if(mysqli_query($con,$sql)==1){
+	if(mysqli_query($con,$sql)){
 
 
 
         echo "<br> ok inserted ";
-        /*
+        
 
         echo '<script type="text/javascript">
         
@@ -62,7 +62,7 @@ echo "insert stat ".mysqli_query($con,$sql);
         
         ';
      
-*/
+
        
 
         //echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
