@@ -15,8 +15,8 @@ $phone=$_POST['phone'];
 $url=$_POST['url'];
 $customer=$_POST['customer'];
 
-echo $username.$phone.$url.$customer."<br>"; 
-
+//echo $username.$phone.$url.$customer."<br>"; 
+echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
 
 $sql="select *  from users  where username='".$username."'";
 $result=mysqli_query($con,$sql);
@@ -61,7 +61,7 @@ try {
 
 	if(mysqli_query($con,$sql)){
 
-        echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
+        //echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
 
         echo "<br> ok inserted ";
         
