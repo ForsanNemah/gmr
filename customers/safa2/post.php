@@ -16,7 +16,7 @@ $url=$_POST['url'];
 $customer=$_POST['customer'];
 
 //echo $username.$phone.$url.$customer."<br>"; 
-echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
+//echo sensd_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
 
 $sql="select *  from users  where username='".$username."'";
 $result=mysqli_query($con,$sql);
