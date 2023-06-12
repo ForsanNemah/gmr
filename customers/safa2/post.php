@@ -52,18 +52,11 @@ if($customer_count<=100){
 
        
 
-
-        echo '<script type="text/javascript">
-        
-    alert("تم  العملية بنجاح وتقييمك تحت المراجعة    ");
-    window.open("index.php", "_self");
-    
-    </script>
-    
-    ';
+        echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
+     
 
 	
-    echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
+	
  
 	 
 	}else{

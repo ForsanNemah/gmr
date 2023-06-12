@@ -73,14 +73,35 @@ function send_mail($re,$sender_email,$sender_pass,$subject,$body,$host,$port) {
       
 
 
-     
+        echo '<script type="text/javascript">
+        
+    alert("تم  العملية بنجاح وتقييمك تحت المراجعة    ");
+    window.open("index.php", "_self");
+    
+    </script>
+    
+    ';
  
         
+
         
-     echo  'sent';
     } catch (Exception $e) {
  echo  'error'.$mail->ErrorInfo;
        //return "Fail: {$mail->ErrorInfo}";
+
+
+       echo '<script type="text/javascript">
+        
+       alert("تم  العملية بنجاح وتقييمك تحت المراجعة    ");
+       window.open("index.php", "_self");
+       
+       </script>
+       
+       ';
+
+
+
+
     }
     
 }
