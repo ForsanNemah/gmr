@@ -1,7 +1,7 @@
 <?php
 
 //echo "wwe";
-//include 'init.php';
+include 'init.php';
 include 'phpmailer/index.php';
 
 
