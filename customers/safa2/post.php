@@ -46,6 +46,19 @@ echo "<br> still we can add";
 
 //echo "insert stat ".mysqli_query($con,$sql);
 
+
+
+
+
+
+
+try {
+	
+
+
+
+
+
 	if(mysqli_query($con,$sql)){
 
 
@@ -73,29 +86,57 @@ echo "<br> still we can add";
  
 	 
 	}else{
-		echo("فشل");
-echo(mysqli_error($con));
-
-
-echo '<script type="text/javascript">
-        
-alert("هذا التقييم موجود مسبقا ");
-window.open("index.php", "_self");
-
-</script>
-
-';
-
-
-
-
-
-
-
-
-
+ 
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} catch (Exception $ex) {
+    
+    echo("فشل");
+    echo(mysqli_error($con));
+    
+    
+    echo '<script type="text/javascript">
+            
+    alert("هذا التقييم موجود مسبقا ");
+    window.open("index.php", "_self");
+    
+    </script>
+    
+    ';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
