@@ -1,8 +1,8 @@
 <?php
 
 //echo "wwe";
-require 'init.php';
-//include 'phpmailer/index.php';
+include 'init.php';
+include 'phpmailer/index.php';
 
 
 
