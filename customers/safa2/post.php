@@ -46,7 +46,7 @@ echo "<br> still we can add";
 
 echo "insert stat ".mysqli_query($con,$sql);
 
-	if(mysqli_query($con,$sql)){
+	if(mysqli_query($con,$sql)==1){
 
 
 
