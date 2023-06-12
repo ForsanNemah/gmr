@@ -42,7 +42,7 @@ if($customer_count<=100){
 
 
 
-    $sql="INSERT INTO url_transactions(phone,username,customer,ut_url) VALUES ('".$phone."','".$username."','".$customer."','".$url."'  )";
+    $sql="INSERT INTO url_transactions(username,phone,customer,ut_url) VALUES ('".$username."','".$phone."','".$customer."','".$url."'  )";
 
 echo "insert stat ".mysqli_query($con,$sql);
 	if(mysqli_query($con,$sql)){
