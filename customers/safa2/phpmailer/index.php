@@ -1,4 +1,9 @@
 <?php
+
+
+
+
+
 ini_set('max_execution_time', 5000);
 ini_set('memory_limit', '256M');
 //Import PHPMailer classes into the global namespace
@@ -20,6 +25,18 @@ require 'vendor/autoload.php';
 
 
 //echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023","sub","body","smtp.hostinger.com","465");
+
+
+
+try{
+
+
+
+
+
+
+
+
 function send_mail($re,$sender_email,$sender_pass,$subject,$body,$host,$port) {
 
     $mail = new PHPMailer(true);
@@ -90,3 +107,16 @@ echo "sent";
     }
     
 }
+
+}
+catch (Exception $e) {
+    echo  'error'.$e;
+           
+   
+   
+        
+   
+   
+   
+   
+       }
