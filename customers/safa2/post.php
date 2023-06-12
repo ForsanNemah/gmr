@@ -54,7 +54,7 @@ if($customer_count<=100){
 
         //echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
      
-        echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023","cccc","bbb","smtp.hostinger.com","465");
+        echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023","فرسان","نعمه","smtp.hostinger.com","465");
 	
 	
  
