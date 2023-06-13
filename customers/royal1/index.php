@@ -542,10 +542,7 @@ echo "<option value='$value'>$value</option>";
                                     <br>
                                     <br>
                                     <br>
-                                 <a href="../../gmr/index.php">
-                                    <button   class="btn btn-info"> انشاء حساب </button>
-
-                                    </a>
+                               
                                  </div>
                             </div>
                             
@@ -557,7 +554,10 @@ echo "<option value='$value'>$value</option>";
                     
                                 </form>
 
-                               
+                                <a href="../../gmr/index.php">
+                                    <button   class="btn btn-info"> انشاء حساب </button>
+
+                                    </a>
                     </div>
                     <div class="col-12 col-lg-6 passion">
                         <div class="text-center text-lg-right">
