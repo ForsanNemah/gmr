@@ -6,7 +6,7 @@ require 'phpmailer/index.php';
 
 
 
-
+$max_needed_number=10;
 
 
 
@@ -33,7 +33,7 @@ $result=mysqli_query($con,$sql);
 $customer_count =mysqli_num_rows($result);
 echo "customer url count  ".$customer_count;
 
-if($customer_count<=100){
+if($customer_count<=$max_needed_number){
 
 
 
