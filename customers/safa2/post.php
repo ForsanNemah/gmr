@@ -19,7 +19,7 @@ echo $username.$phone.$url.$customer."<br>";
 echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
 
 
-/*
+
 $sql="select *  from users  where username='".$username."'";
 $result=mysqli_query($con,$sql);
 //echo "count =".mysqli_num_rows($result);
