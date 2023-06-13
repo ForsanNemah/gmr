@@ -3,10 +3,10 @@
 //echo "wwe";
 include 'init.php';
 require 'phpmailer/index.php';
+include 'info.php';
 
 
-
-$max_needed_number=100;
+ 
 
 
 

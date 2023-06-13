@@ -8,6 +8,7 @@ $logo_h='100px';
 $logo_w='20px';
 $customer_name=' تقييمات المانيوم الصفا الدمام  ';
 $customer_user_name='safa2';
+$max_needed_number=20;
 //echo $ad_source;
 
 

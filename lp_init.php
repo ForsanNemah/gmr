@@ -12,8 +12,13 @@ $db_password="Forsan@2023";
 $db_name="u122541238_efg";
 
 
- 
+/*
 
+$host="localhost";
+$db_user="root";
+$db_password="";
+$db_name="getmonyfromgmail";
+*/
 
 
 

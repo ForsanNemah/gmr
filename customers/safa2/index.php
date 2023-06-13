@@ -130,6 +130,48 @@ include 'info.php';
   
 
 
+<?php
+
+//echo "wwe";
+include 'init.php';
+include 'info.php';
+
+$sql="select *  from url_transactions  where customer='".$customer_user_name."'";
+$result=mysqli_query($con,$sql);
+$customer_count =mysqli_num_rows($result);
+echo "customer url count  ".$customer_count;
+
+if($customer_count>=$max_needed_number){
+
+
+    echo '<script type="text/javascript">
+        
+    alert("  تم تجاوز العدد المطلوب من التقييمات تواصل مع مدير المنصة ");
+    window.open("https://www.google.com/", "_self");
+    
+    </script>
+    
+    ';
+
+
+
+
+}
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
 
 <div 
 class="bg-light  "
