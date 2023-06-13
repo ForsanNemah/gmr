@@ -15,7 +15,16 @@ $phone=$_POST['phone'];
 $url=$_POST['url'];
 $customer=$_POST['customer'];
 
-echo $username.$phone.$url.$customer."<br>"; 
+
+$username=trim($username);
+$phone=trim($phone);
+$url=trim($url);
+$customer=trim($customer);
+
+
+
+
+//echo $username.$phone.$url.$customer."<br>"; 
 //echo send_mail("forsan20172017@gmail.com","NewMapReview@pscye.com","Psc@2023",$customer,$url,"smtp.hostinger.com","465");
 
 
