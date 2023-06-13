@@ -6,7 +6,7 @@ require 'phpmailer/index.php';
 
 
 
-$max_needed_number=10;
+$max_needed_number=100;
 
 
 
