@@ -425,7 +425,7 @@ include 'info.php';
 
 
                                     <div class="form-group" dir="rtl">
-                                        <input name="url" type="text" class="form-control" placeholder=" رابط التقييم  " required>
+                                        <input name="url" type="url" class="form-control" placeholder=" رابط التقييم  " required>
                                     </div>
  
 
