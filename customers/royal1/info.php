@@ -9,6 +9,7 @@ $logo_w='20px';
 $customer_name=' مجمع رويال الدمام';
 $customer_user_name='royal1';
 $max_needed_number=300;
+$location_url="https://maps.app.goo.gl/GAJ3jfW9UoKYQkGRA?g_st=iw";
 //echo $ad_source;
 
 

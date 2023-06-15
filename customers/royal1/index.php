@@ -306,7 +306,7 @@ include 'info.php';
 <br>
 
 
-<a href="">
+<a href="<?php include 'info.php';echo $location_url;?>">
                                     <button   class="btn btn-info"> فتح رابط التقييم</button>
 
                                     </a>
