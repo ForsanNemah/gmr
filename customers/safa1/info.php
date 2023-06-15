@@ -6,9 +6,9 @@ $ad_source="snap 1";
 
 $logo_h='100px';
 $logo_w='20px';
-$customer_name=' مجمع رويال الدمام';
-$customer_user_name='royal1';
-$max_needed_number=300;
+$customer_name=' تقييمات المانيوم الصفا الدمام  ';
+$customer_user_name='safa2';
+$max_needed_number=100;
 //echo $ad_source;
 
 

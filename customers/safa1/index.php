@@ -293,10 +293,6 @@ include 'info.php';
 ?>
                       
                       </h3>
-
- 
-
-
                       <a href="../../gmr/index.php">
                                     <button   class="btn btn-info"> انشاء حساب </button>
 
@@ -304,18 +300,6 @@ include 'info.php';
 
 <br>
 <br>
-
-
-<a href="">
-                                    <button   class="btn btn-info"> فتح رابط التقييم</button>
-
-                                    </a>
-
-
-
-<br>
-<br>
-
                     </div>
                 </div>
             </div>
@@ -561,11 +545,8 @@ echo "<option value='$value'>$value</option>";
 
                                     <button id="send" type="submit" class="btn submit-btn">رفع التقييم   </button>
                                  <div>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                               
+                                   
+
                                  </div>
                             </div>
                             
