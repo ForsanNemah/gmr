@@ -139,7 +139,7 @@ include 'info.php';
 $sql="select *  from url_transactions  where customer='".$customer_user_name."'";
 $result=mysqli_query($con,$sql);
 $customer_count =mysqli_num_rows($result);
-echo "customer url count  ".$customer_count;
+//echo "customer url count  ".$customer_count;
 
 if($customer_count>=$max_needed_number){
 
@@ -285,12 +285,18 @@ if ($handle = opendir('logo')) {
 
 include 'info.php';
 
- echo $info['ev_logo_name'];
+ echo $info['ev_logo_name']."<br>";
+
+ echo "".$customer_count."/".$max_needed_number;
 
 
 
 
 ?>
+
+
+
+
                       
                       </h3>
 
