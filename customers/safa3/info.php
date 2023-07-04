@@ -8,7 +8,7 @@ $logo_h='100px';
 $logo_w='20px';
 $customer_name=' معرض الصفا 3';
 $customer_user_name='safa3';
-$max_needed_number=300;
+$max_needed_number=200;
 $location_url="https://maps.app.goo.gl/rAfsPDF4eRN9FBg39";
 //echo $ad_source;
 
