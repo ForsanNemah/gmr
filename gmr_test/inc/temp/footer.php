@@ -3,6 +3,7 @@
         <script src="lay/lib/bootstrap.bundle.min.js"></script>
         <script src="lay/lib/chosen.jquery.min.js"></script>
         <script src="lay/lib/clipboard.min.js"></script>
+        <script src="lay/js/ajax.js"></script>
         <script src="lay/js/main.js"></script>
         </body>
 </html>

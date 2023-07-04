@@ -20,23 +20,23 @@ foreach (getData('transactions','user_id=?',array($id)) as $all) {
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav <?php echo $navbar ?>-auto mb-2 mb-lg-0">
             <li class="nav-item">
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="#">
                         <i class="fa fa-sack-dollar fa-fw"></i>
-                        <span>Total : <?php echo $total ?></span>
+                        <span><?php echo words('Total') . ' : ' . $total ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="#">
                         <i class="fa fa-sack-dollar fa-fw"></i>
-                        <span>Remaining : <?php echo getCount('url_transactions',"ut_state=1 and username=?",array($_SESSION['foursan']))-$remaining?></span>
+                        <span><?php echo words('Remaining') . ' : ' . getCount('url_transactions',"ut_state=1 and username=?",array($_SESSION['foursan']))-$remaining?></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="#">
                         <i class="fa fa-sack-dollar fa-fw"></i>
-                        <span>Withdrawal : <?php echo $remaining ?></span>
+                        <span><?php echo words('Withdrawal') . ' : ' . $remaining ?></span>
                     </a>
                 </li>
             </ul>
@@ -47,7 +47,7 @@ foreach (getData('transactions','user_id=?',array($id)) as $all) {
         <!------------------------ Transactions ------------------------>
         <div class="panel">
             <div class="panel-heading">
-                <?php echo $pageTitle ?>
+                <?php echo words($pageTitle) ?>
             </div>
             <div class="panel-body">
                 <!------------------------ Table Responsive ------------------------>
@@ -57,11 +57,21 @@ foreach (getData('transactions','user_id=?',array($id)) as $all) {
                         <!------------------------ Table Head ------------------------>
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Customer</th>
-                                <th scope="col">Balance</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Date</th>
+                                <th scope="col">
+                                    <?php echo words('#') ?>
+                                </th>
+                                <th scope="col">
+                                    <?php echo words('Customer') ?>
+                                </th>
+                                <th scope="col">
+                                    <?php echo words('Balance') ?>
+                                </th>
+                                <th scope="col">
+                                    <?php echo words('Description') ?>
+                                </th>
+                                <th scope="col">
+                                    <?php echo words('Date') ?>
+                                </th>
                             </tr>
                         </thead> <!-- Table Head -->
                         <!------------------------ Table Body ------------------------>

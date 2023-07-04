@@ -13,7 +13,7 @@
         <!------------------------ Url ------------------------>
         <div class="panel">
             <div class="panel-heading">
-                <?php echo $pageTitle ?>
+                <?php echo words($pageTitle) ?>
             </div>
             <div class="panel-body">
                 <!------------------------ Table Responsive ------------------------>
@@ -23,9 +23,15 @@
                         <!------------------------ Table Head ------------------------>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">State</th>
-                        <th scope="col">Control</th>
+                        <th scope="col">
+                            <?php echo words('#') ?>
+                        </th>
+                        <th scope="col">
+                            <?php echo words('State') ?>
+                        </th>
+                        <th scope="col">
+                            <?php echo words('Control') ?>
+                        </th>
                     </tr>
                 </thead> <!-- Table Head -->
                 <!------------------------ Table Body ------------------------>

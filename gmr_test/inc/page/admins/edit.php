@@ -9,19 +9,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = array();
     // UserName Error
     if (empty($username)) {
-        $errors[] = 'Enter User Name';
+        $errors[] = words('Enter User Name');
     } elseif (getCount('admins', 'username = ? && id != ?', array($username, id())) > 0 || getCount('users', 'username = ? && id != ?', array($username, id())) > 0) {
-        $errors[] = 'User Name Is Exists';
+        $errors[] = words('User Name Is Exists');
     }
     // Password Error
     if (empty($password1)) {
-        $errors[] = 'Enter Password';
+        $errors[] = words('Enter Password');
     } elseif (strlen($password1) < 8) {
-        $errors[] = 'Password Cannot Be Less Then 8 Characters';
+        $errors[] = words('Password Cannot Be Less Then 8 Characters');
     } elseif (empty($password2)) {
-        $errors[] = 'Reenter Password';
+        $errors[] = words('Reenter Password');
     } elseif ($password1 != $password2) {
-        $errors[] = 'The Password Is Not Equal';
+        $errors[] = words('The Password Is Not Equal');
     }
     // Edit Informatio To Database
     if (empty($errors)) {
@@ -36,18 +36,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!------------------------ Navbar ------------------------>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand">
-            <span><?php echo $pageTitle ?></span>
+            <span><?php echo words($pageTitle) ?></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav <?php echo $navbar ?>-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link btn btn-danger btn-sm" aria-current="page" href="?Page=View">
                         <i class="fa fa-chevron-left fa-fw"></i>
-                        <span>Back</span>
+                        <span><?php echo words('Back') ?></span>
                     </a>
                 </li>
             </ul>
@@ -60,7 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!------------------------ Beasic ------------------------>
             <div class="panel">
                 <!------------------------ Title ------------------------>
-                <div class="panel-heading">Edit Admin</div>
+                <div class="panel-heading">
+                    <?php echo words('Edit Admin') ?>
+                </div>
                 <!------------------------ Body ------------------------>
                 <div class="panel-body">
                     <!------------------------ Raw ------------------------>
@@ -78,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ UserName ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>UserName</label>
+                                <label><?php echo words('User Name') ?></label>
                                 <input
                                     type="text"
                                     name="username"
@@ -90,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Password ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Password</label>
+                                <label><?php echo words('Password') ?></label>
                                 <input
                                     type="password"
                                     name="password1"
@@ -102,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Password ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Reenter Password</label>
+                                <label><?php echo words('Reenter Password') ?></label>
                                 <input
                                     type="password"
                                     name="password2"
@@ -115,7 +117,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div> <!-- Body -->
             </div> <!-- Beasic -->
             <div class="form-group">
-                <button type="submit" class="btn btn-success btn-sm">Edit</button>
+                <button type="submit" class="btn btn-success btn-sm">
+                    <?php echo words('Edit') ?>
+                </button>
             </div>
         </div> <!-- Container -->
     </form> <!-- Form -->

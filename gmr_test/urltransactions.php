@@ -8,13 +8,11 @@ if (isset($_SESSION['foursan'])&&$_SESSION['idForsan']==1) {
     include $topbar; // Include Topbar File
     include $sidebar; // Include Sidebar File
     if (filterPage() == 'View') {
-        $pageTitle = "View $pageTitle";
+        $pageTitle = "$pageTitle";
         include $pageUrlTransactions . 'view.php';
     } elseif (filterPage() == 'Add') {
-        $pageTitle = "Add $pageTitle";
+        $pageTitle = "$pageTitle";
         include $pageUrlTransactions . 'add.php';
-    } elseif (filterPage() == 'State') {
-        include $pageUrlTransactions . 'state.php';
     } elseif (filterPage() == 'Checked') {
         include $pageUrlTransactions . 'checked.php';
     }

@@ -11,11 +11,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav <?php echo $navbar ?>-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link btn btn-success btn-sm" aria-current="page" href="?Page=Edit">
                         <i class="fa fa-edit fa-fw"></i>
-                        <span>Change Password</span>
+                        <span>
+                            <?php echo words('Change Password') ?>
+                        </span>
                     </a>
                 </li>
             </ul>
@@ -30,35 +32,35 @@
                 <!------------------------ UserName ------------------------>
                 <div class="col-sm-6">
                     <div class="pro">
-                        <p>UserName</p>
+                        <p><?php echo words('User Name') ?></p>
                         <p><?php echo $username ?></p>
                     </div>
                 </div> <!-- UserName -->
                 <!------------------------ Phone ------------------------>
                 <div class="col-sm-6">
                     <div class="pro">
-                        <p>Phone</p>
+                        <p><?php echo words('Phone') ?></p>
                         <p><?php echo getItem('users',$username,'username=?','phone') ?></p>
                     </div>
                 </div> <!-- Phone -->
                 <!------------------------ Email ------------------------>
                 <div class="col-sm-6">
                     <div class="pro">
-                        <p>Email</p>
+                        <p><?php echo words('Email') ?></p>
                         <p><?php echo getItem('users',$username,'username=?','email') ?></p>
                     </div>
                 </div> <!-- Email -->
                 <!------------------------ Registration Date And Time ------------------------>
                 <div class="col-sm-6">
                     <div class="pro">
-                        <p>Registration Date And Time</p>
+                        <p><?php echo words('Add Date') ?></p>
                         <p><?php echo getItem('users',$username,'username=?','us_date') ?></p>
                     </div>
                 </div> <!-- Registration Date And Time -->
                 <!------------------------ Main Email ------------------------>
                 <div class="col-12">
                     <div class="pro">
-                        <p>Main Email</p>
+                        <p><?php echo words('Main Email') ?></p>
                         <p><?php echo getItem('users',$username,'username=?','main_email') ?></p>
                     </div>
                 </div> <!-- Main Email -->

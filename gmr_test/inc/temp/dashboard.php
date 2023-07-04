@@ -3,7 +3,7 @@
     <!------------------------ Navbar ------------------------>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand">
-            <span><?php echo $pageTitle ?></span>
+            <span><?php echo words($pageTitle) ?></span>
         </a>
     </nav> <!-- Navbar -->
     <!------------------------ Dashboard ------------------------>
@@ -17,7 +17,7 @@
                     <!------------------------ Admins Board ------------------------>
                     <div class="col-sm-6">
                         <div class="board">
-                            <p>Admins</p>
+                            <p><?php echo words('Admins') ?></p>
                             <span>
                                 <?php echo getCount('admins') ?>
                             </span>
@@ -26,7 +26,7 @@
                     <!------------------------ Users Board ------------------------>
                     <div class="col-sm-6">
                         <div class="board">
-                            <p>Users</p>
+                            <p><?php echo words('Users') ?></p>
                             <span>
                                 <?php echo getCount('users') ?>
                             </span>
@@ -35,7 +35,7 @@
                     <!------------------------ Transactions Board ------------------------>
                     <div class="col-12">
                         <div class="board">
-                            <p>Transactions</p>
+                            <p><?php echo words('Transactions') ?></p>
                             <span>
                                 <?php echo getCount('transactions') ?>
                             </span>
@@ -51,7 +51,7 @@
                     <div class="panel">
                         <!------------------------ Title ------------------------>
                         <div class="panel-heading">
-                            <span>Last 5 Admins</span>
+                            <span><?php echo words('Last 5 Admins') ?></span>
                             <i class="fa fa-minus fa-fw"></i>
                         </div>
                         <!------------------------ Body ------------------------>
@@ -83,7 +83,7 @@
                     <div class="panel">
                         <!------------------------ Title ------------------------>
                         <div class="panel-heading">
-                            <span>Last 5 Users</span>
+                            <span><?php echo words('Last 5 Users') ?></span>
                             <i class="fa fa-minus fa-fw"></i>
                         </div>
                         <!------------------------ Body ------------------------>
@@ -117,7 +117,7 @@
                     <div class="panel">
                         <!------------------------ Title ------------------------>
                         <div class="panel-heading">
-                            <span>Last 5 Transactions</span>
+                            <span><?php echo words('Last 5 Transactions') ?></span>
                             <i class="fa fa-minus fa-fw"></i>
                         </div>
                         <!------------------------ Body ------------------------>

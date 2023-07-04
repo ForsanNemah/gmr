@@ -13,9 +13,13 @@
             <i class="fa fa-user fa-fw"></i>
             <div>
                 <?php if ($_SESSION['idForsan'] == 2) { ?>
-                <a href="accounts.php?Page=Profile">Show Profile</a>
+                <a href="accounts.php?Page=Profile">
+                    <?php echo words('Show Profile') ?>
+                </a>
                 <?php } ?>
-                <a href="logout.php">Logout</a>
+                <a href="logout.php">
+                    <?php echo words('Logout') ?>
+                </a>
             </div>
         </div>
     </div>

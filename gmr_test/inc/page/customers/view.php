@@ -11,33 +11,30 @@ foreach (getData('url_transactions') as $all) {
     <!------------------------ Navbar ------------------------>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand">
-            <span><?php echo $pageTitle ?></span>
+            <span><?php echo words($pageTitle) ?></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav <?php echo $navbar ?>-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="#">
                         <i class="fa fa-sack-dollar fa-fw"></i>
-                        <span>
-                            Url :
-                            <?php echo $url ?>
-                        </span>
+                        <span><?php echo words('Url') . ' : ' . $url ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-dark btn-sm" aria-current="page" href="#" id="search">
                         <i class="fa fa-search fa-fw"></i>
-                        <span>Search</span>
+                        <span><?php echo words('Search') ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="?Page=Add">
                         <i class="fa fa-plus fa-fw"></i>
-                        <span>Add New</span>
+                        <span><?php echo words('Add') ?></span>
                     </a>
                 </li>
             </ul>
@@ -58,12 +55,13 @@ foreach (getData('url_transactions') as $all) {
                 <!------------------------ Table Head ------------------------>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Total Url</th>
-                        <th scope="col">Add Date</th>
-                        <th scope="col">Active</th>
-                        <th scope="col">Control</th>
+                        <th scope="col"><?php echo words('#') ?></th>
+                        <th scope="col"><?php echo words('Full Name') ?></th>
+                        <th scope="col"><?php echo words('Location') ?></th>
+                        <th scope="col"><?php echo words('Total Url') ?></th>
+                        <th scope="col"><?php echo words('Add Date') ?></th>
+                        <th scope="col"><?php echo words('State') ?></th>
+                        <th scope="col"><?php echo words('Control') ?></th>
                     </tr>
                 </thead> <!-- Table Head -->
                 <!------------------------ Table Body ------------------------>
@@ -72,6 +70,7 @@ foreach (getData('url_transactions') as $all) {
                     <tr>
                         <td><?php echo $i ?></td>
                         <td><?php echo $all['fullname'] ?></td>
+                        <td><?php echo $all['cu_location'] ?></td>
                         <td>
                             <?php
                                 echo getCount('url_transactions','ut_state = 1 and customer = ?',array($all['fullname']));

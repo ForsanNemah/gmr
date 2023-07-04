@@ -48,7 +48,6 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     background-color: var(--background);
     padding: 50px;
     border-radius: 10px;
-    border-right: 10px solid var(--third);
 }
 @media (max-width: 342px) {
     .login {
@@ -63,23 +62,13 @@ P, ul, h1, h2, h3, h4, h5, h6 {
 .login form .form-group {
     position: relative;
 }
-.login form .form-group input {
-    padding-left: 40px;
-}
-.login form .form-group input[type="password"] {
-    padding-right: 40px;
-}
 .login form .form-group i {
     position: absolute;
     font-size: 20px;
     top: 40px;
     color: var(--secondry);
 }
-.login form .form-group i:not(#showPassword) {
-    left: 10px;
-}
 .login form .form-group #showPassword {
-    right: 10px;
     cursor: pointer;
 }
 .login form .form-group button {
@@ -99,8 +88,7 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 999;
+    z-index: 9;
     box-shadow: -46px -10px 30px black;
 }
 .topbar .title-arae > i {
@@ -108,7 +96,6 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 .topbar .title-arae p {
-    margin-left: 10px;
     color: var(--secondry);
     font-size: 20px;
     font-weight: bold;
@@ -139,7 +126,6 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary);
     position: absolute;
     top: 50px;
-    right: 0;
     width: 200px;
     text-align: center;
     z-index: 99999;
@@ -159,9 +145,6 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 @media (max-width: 991px) {
-    .topbar .title-arae p {
-        margin-right: 10px;
-    }
     .topbar .title-arae p i {
         font-size: 30px;
     }
@@ -175,10 +158,9 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
     background-color: var(--background);
     transition: .3s;
-    z-index: 99;
+    z-index: 8;
 }
 .sidebar .menu {
     margin: 80px 15px;
@@ -203,22 +185,10 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     background-color: var(--third);
     color: var(--background);
 }
-.showSidebar {
-    left: -200px;
-}
-@media (max-width: 991px) {
-    .sidebar {
-        left: -200px;
-    }
-    .showSidebar {
-        left: 0;
-    }
-}
 /*************** Content ***************/
 .content {
     position: relative;
     top: 50px;
-    left: 200px;
     width: calc(100% - 200px);
     transition: .3s;
     padding: 10px;
@@ -229,14 +199,7 @@ P, ul, h1, h2, h3, h4, h5, h6 {
     }
 }
 .showContent {
-    left: 0;
     width: 100%;
-}
-@media (max-width: 991px) {
-    .content {
-        left: 0;
-        width: 100%;
-    }
 }
 /*************** Navbar ***************/
 .navbar {
@@ -253,13 +216,9 @@ P, ul, h1, h2, h3, h4, h5, h6 {
 .navbar ul {
     margin: 5px 0;
 }
-.navbar ul li:not(:last-of-type) {
-    margin-right: 5px;
-}
 @media (max-width: 991px) {
     .navbar ul li:not(:last-of-type) {
         margin-bottom: 5px;
-        margin-right: 0;
     }
 }
 .navbar ul a,.navbar ul a:hover,.navbar ul a:focus {
@@ -293,7 +252,6 @@ form .form-group label {
     color: var(--secondry);
     font-size: 15px;
     font-weight: bold;
-    margin-right: 3px;
     margin-bottom: 5px;
 }
 form .form-group select {
@@ -341,7 +299,7 @@ form .form-group button {
     font-size: 17px;
     color: white;
 }
-.setting a, .setting a:hover, .setting a:focus {
+.setting a, .setting a:hover, .setting a:focus, .setting button {
     width: 100%;
     display: block;
     color: white;
@@ -359,7 +317,7 @@ table tbody tr td {
     padding: 3px !important;
     font-weight: bold;
 }
-table tbody tr td:hover {
+table tbody tr:hover td {
     background-color: var(--secondry);
     color: var(--background);
 }
@@ -408,10 +366,7 @@ table td a[href="#delete"]:not(.admins) {
 }
 /*************** Last 5 Additting ***************/
 .dashboard .panel .panel-heading {
-    text-align: left;
     display: flex;
-    padding-right: 10px;
-    padding-left: 10px;
     justify-content: space-between;
 }
 .dashboard .panel .panel-heading i {
@@ -428,14 +383,12 @@ table td a[href="#delete"]:not(.admins) {
     position: relative;
     padding: 10px;
     border-radius: 5px;
-    margin-left: 10px;
 }
 .dashboard .panel .panel-body > div::before {
     content: '';
     display: block;
     position: absolute;
     top: 0;
-    left: -15px;
     width: 5px;
     height: 100%;
     background-color: var(--secondry);
@@ -445,12 +398,10 @@ table td a[href="#delete"]:not(.admins) {
     display: block;
     position: absolute;
     top: 13px;
-    left: -10px;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 10px;
-    border-color: transparent transparent transparent var(--third);
 }
 .dashboard .panel .panel-body > div:not(:last-of-type) {
     margin-bottom: 10px;
@@ -473,4 +424,59 @@ table td a[href="#delete"]:not(.admins) {
 .profile .pro p {
     color: var(--primary);
     font-size: 20px;
+}
+/*************** Spinner Loading ***************/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+.spinner-loading {
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translate(0, 50%);
+}
+.spinner-loading span {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: white;
+    position: absolute;
+    animation: spinnerLoading 1s linear infinite;
+}
+.spinner-loading .one {
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    left: 50px;
+    animation-duration: .85s;
+}
+.spinner-loading .two {
+    width: 75px;
+    height: 75px;
+    top: 37.5px;
+    left: 37.5px;
+    animation-duration: .95s;
+}
+.spinner-loading .three {
+    width: 100px;
+    height: 100px;
+    left: 25px;
+    top: 25px;
+    animation-duration: 1.05s;
+}
+@keyframes spinnerLoading {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
