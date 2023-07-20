@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="form-group">
                                 <label><?php echo words('Email Name') ?></label>
                                 <select class="form-control" name="emailname">
-                                    <?php foreach (getData('email_names','em_state=1') as $all) { ?>
+                                    <?php foreach (getData('email_names','state=1') as $all) { ?>
                                     <option value="<?php echo $all['em_name'] ?>"
                                     <?php if(isset($emailname)&&$emailname==$all['em_name']){echo'selected';}?>>
                                         <?php echo $all['em_name'] ?>

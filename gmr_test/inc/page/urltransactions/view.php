@@ -122,7 +122,7 @@ if (isset($_GET['Customer'])) {
     </div> <!-- Container -->
 </div> <!-- Content -->
 <!------------------------ Spinner Loading ------------------------>
-<div class="overlay" id="urltransactions">
+<div class="overlay" id="spinnerLoading">
     <div class="spinner-loading">
         <span class="one"></span>
         <span class="two"></span>

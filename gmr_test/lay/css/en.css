@@ -52,6 +52,12 @@
 .showContent {
     left: 0;
 }
+@media (max-width: 991px) {
+    .content {
+        left: 0;
+        width: 100%;
+    }
+}
 /*************** Navbar ***************/
 .navbar ul li:not(:last-of-type) {
     margin-right: 5px;

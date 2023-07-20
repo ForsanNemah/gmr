@@ -4,7 +4,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get Variables From Form
     $id = getItem('users',$_SESSION['foursan'],'username = ?', 'id');
     $name = filterRequest('name');
-    $state = filterRequest('state');
     // Array Errors
     $errors = array();
     // UserName Error
@@ -15,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     // Add Informatio To Database
     if (empty($errors)) {
-        $add = $con->prepare('INSERT INTO email_names(user_id, em_name, em_state) VALUES(?, ?, ?)');
-        $add->execute(array($id, $name, $state));
+        $add = $con->prepare('INSERT INTO email_names(user_id, em_name) VALUES(?, ?)');
+        $add->execute(array($id, $name));
         header('location: ?Page=View');
     }
 }
@@ -69,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <?php } } ?>
                         </div> <!-- Errors -->
                         <!------------------------ Name ------------------------>
-                        <div class="col-sm-6">
+                        <div class="col-12">
                             <div class="form-group">
                                 <label><?php echo words('Email Name') ?></label>
                                 <input
@@ -80,22 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     value="<?php if(isset($name)){echo$name;}?>">
                             </div>
                         </div> <!-- Name -->
-                        <!------------------------ State ------------------------>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label><?php echo words('State') ?></label>
-                                <div class="form-group">
-                                    <select name="state" class="form-control">
-                                        <?php foreach (status() as $k => $v) { ?>
-                                        <option value="<?php echo $k ?>"
-                                        <?php if(isset($state)&&$state==$k){echo'selected';}?>>
-                                            <?php echo $v ?>
-                                        </option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> <!-- State -->
                     </div> <!-- Raw -->
                 </div> <!-- Body -->
             </div> <!-- Beasic -->

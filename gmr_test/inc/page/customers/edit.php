@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     name="location"
                                     class="form-control"
                                     autocomplete="off"
-                                    value="<?php if(isset($location)){echo$location;}?>">
+                                    value="<?php if(isset($location)){echo$location;}else{echo getItem('customers', id(), 'id = ?', 'cu_location');}?>">
                             </div>
                         </div> <!-- Location -->
                         <!------------------------ Active ------------------------>

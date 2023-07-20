@@ -17,17 +17,17 @@
 }
 /*************** Topbar ***************/
 .topbar {
-    right: 0;
+    left: 0;
 }
 .topbar .title-arae p {
-    margin-right: 10px;
+    margin-left: 10px;
 }
 .topbar .users-area div {
-    left: 0;
+    right: 0;
 }
 @media (max-width: 991px) {
     .topbar .title-arae p {
-        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 /*************** Sidebar ***************/
@@ -51,6 +51,12 @@
 }
 .showContent {
     right: 0;
+}
+@media (max-width: 991px) {
+    .content {
+        left: 0;
+        width: 100%;
+    }
 }
 /*************** Navbar ***************/
 .navbar ul li:not(:last-of-type) {

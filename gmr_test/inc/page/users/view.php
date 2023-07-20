@@ -88,6 +88,9 @@
                             <a href="transactions.php?Page=View&User=<?php echo $all['id'] ?>" class="btn btn-info btn-sm">
                                 <i class="fa fa-eye fa-fw"></i>
                             </a>
+                            <a href="emailnames.php?Page=View&User=<?php echo $all['id'] ?>" class="btn btn-warning btn-sm">
+                                <i class="fa fa-message fa-fw"></i>
+                            </a>
                             <a href="transactions.php?Page=Add&User=<?php echo $all['id'] ?>" class="btn btn-primary btn-sm">
                                 <i class="fa fa-add fa-fw"></i>
                             </a>
