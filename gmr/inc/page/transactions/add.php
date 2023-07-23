@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = array();
     // Balance Error
     if (empty($balance)) {
-        $errors[] = 'Enter Balance';
+        $errors[] = words('Enter Balance');
     } elseif ($balance > getCount('url_transactions','ut_state=1 and username=?',array(getItem('users',$_GET['User'],'id=?','username')))) {
-        $errors[] = 'The Balance Is Not Available';
+        $errors[] = words('The Balance Is Not Available');
     }
     // Add Informatio To Database
     if (empty($errors)) {
@@ -27,18 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!------------------------ Navbar ------------------------>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand">
-            <span><?php echo $pageTitle ?></span>
+            <span><?php echo words($pageTitle) ?></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav <?php echo $navbar ?>-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link btn btn-danger btn-sm" aria-current="page" href="users.php?Page=View">
                         <i class="fa fa-chevron-left fa-fw"></i>
-                        <span>Back</span>
+                        <span><?php echo words('Back') ?></span>
                     </a>
                 </li>
             </ul>
@@ -51,7 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!------------------------ Beasic ------------------------>
             <div class="panel">
                 <!------------------------ Title ------------------------>
-                <div class="panel-heading">Add New Cash Withdrawal</div>
+                <div class="panel-heading">
+                    <?php echo words('Add New Cash Withdrawal') ?>
+                </div>
                 <!------------------------ Body ------------------------>
                 <div class="panel-body">
                     <!------------------------ Raw ------------------------>
@@ -70,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ UserName ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>UserName</label>
+                                <label><?php echo words('User Name') ?></label>
                                 <input
                                     type="text"
                                     class="form-control text-center" 
@@ -82,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Customer ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Customer</label>
+                                <label><?php echo words('Customer') ?></label>
                                 <select name="customer" class="chosen">
                                     <?php foreach (getData('customers') as $all) { ?>
                                     <option value="<?php echo $all['id'] ?>">
@@ -95,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Balance ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Balance</label>
+                                <label><?php echo words('Balance') ?></label>
                                 <input
                                     type="number"
                                     class="form-control"
@@ -107,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Description ------------------------>
                         <div class="col-12">
                             <div class="form-group">
-                                <label>Description</label>
+                                <label><?php echo words('Description') ?></label>
                                 <textarea class="form-control" autocomplete="off" name="desc" rows="10"><?php if(isset($desc)){echo$desc;}?></textarea>
                             </div>
                         </div> <!-- Description -->
@@ -115,7 +117,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div> <!-- Body -->
             </div> <!-- Beasic -->
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <?php echo words('Add') ?>
+                </button>
             </div>
         </div> <!-- Container -->
     </form> <!-- Form -->

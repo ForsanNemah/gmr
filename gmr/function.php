@@ -2,7 +2,7 @@
 function getTitle() {
     global $pageTitle;
     if (isset($pageTitle)) {
-        echo $pageTitle;
+        return $pageTitle;
     } else {
         echo 'No Title';
     }
@@ -55,19 +55,18 @@ function getCount ($table, $where = '1 = 1', $value = null) {
 }
 
 function status () {
-    return array(0 => 'Disabled', 1 => 'Enabled');
+    return array(
+        0 => words('Disabled'),
+        1 => words('Enabled'),
+    );
 }
 
 function printName($number) {
     if ($number == 1) {
-        return 'Enabled';
+        return words('Enabled');
     } else {
-        return 'Disabled';
+        return words('Disabled');
     }
-}
-
-function active(){
-    return array(0=>'Disabled',1=>'Enabled');
 }
 
 function getLastItem ($select, $table, $where = '1 = 1', $value) {

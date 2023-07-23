@@ -1,0 +1,94 @@
+/*************** Login ***************/
+.login {
+    border-right: 10px solid var(--third);
+}
+.login form .form-group input {
+    padding-left: 40px;
+    text-align: left;
+}
+.login form .form-group input[type="password"] {
+    padding-right: 40px;
+}
+.login form .form-group i:not(#showPassword) {
+    left: 10px;
+}
+.login form .form-group #showPassword {
+    right: 10px;
+}
+/*************** Topbar ***************/
+.topbar {
+    left: 0;
+}
+.topbar .title-arae p {
+    margin-left: 10px;
+}
+.topbar .users-area div {
+    right: 0;
+}
+@media (max-width: 991px) {
+    .topbar .title-arae p {
+        margin-right: 10px;
+    }
+}
+/*************** Sidebar ***************/
+.sidebar {
+    left: 0;
+}
+.showSidebar {
+    left: -200px;
+}
+@media (max-width: 991px) {
+    .sidebar {
+        left: -200px;
+    }
+    .showSidebar {
+        left: 0;
+    }
+}
+/*************** Content ***************/
+.content {
+    left: 200px;
+}
+.showContent {
+    left: 0;
+}
+@media (max-width: 991px) {
+    .content {
+        left: 0;
+        width: 100%;
+    }
+}
+/*************** Navbar ***************/
+.navbar ul li:not(:last-of-type) {
+    margin-right: 5px;
+}
+@media (max-width: 991px) {
+    .navbar ul li:not(:last-of-type) {
+        margin-right: 0;
+    }
+}
+/*************** Form ***************/
+form .form-group input,
+form .form-group select {
+    text-align: left;
+}
+form .form-group label {
+    margin-right: 3px;
+    text-align: left;
+}
+/*************** Last 5 Additting ***************/
+.dashboard .panel .panel-heading {
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.dashboard .panel .panel-body > div {
+    margin-left: 10px;
+}
+.dashboard .panel .panel-body > div::before {
+    left: -15px;
+}
+.dashboard .panel .panel-body > div::after {
+    left: -10px;
+    border-color: transparent transparent transparent var(--third);
+}

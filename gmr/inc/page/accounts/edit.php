@@ -10,19 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = array();
     // Old Error
     if (empty($password0)) {
-        $errors[] = 'Enter Old Password';
+        $errors[] = words('Enter Old Password');
     }
     // New Error
     if (empty($password1)) {
-        $errors[] = 'Enter New Password';
+        $errors[] = words('Enter New Password');
     } elseif (strlen($password1) < 8) {
-        $errors[] = 'Password Cannot Be Less Then 8 Characters';
+        $errors[] = words('Password Cannot Be Less Then 8 Characters');
     }
     // Re Error
     if (empty($password2)) {
-        $errors[] = 'Reenter Password';
+        $errors[] = words('Enter Reenter Password');
     } elseif ($password1 != $password2) {
-        $errors[] = 'The Password Is Not Equal';
+        $errors[] = words('The Password Is Not Equal');
     }
     // Add Informatio To Database
     if (empty($errors)&&getItem('users',$username,'username=?','pass') == $password0) {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $add->execute(array($password1, $username));
         header('location: report.php?Page=View');
     } else {
-        $errors[] = 'The Old Password Is Incorrect';
+        $errors[] = words('The Old Password Is Incorrect');
     }
 }
 ?>
@@ -44,10 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<br>';
         }
         ?>
-        <h3>Change Password</h3>
+        <h3><?php echo words('Change Password') ?></h3>
         <form method="post">
             <div class="form-group">
-                <label for="password">Old Password</label>
+                <label for="password">
+                    <?php echo words('Old Password') ?>
+                </label>
                 <i class="fa fa-lock fa-fw"></i>
                 <input
                     type="password"
@@ -58,7 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <i class="fa fa-eye" id="showPassword"></i>
             </div>
             <div class="form-group">
-                <label for="password">New Password</label>
+                <label for="password">
+                    <?php echo words('New Password') ?>
+                </label>
                 <i class="fa fa-lock fa-fw"></i>
                 <input
                     type="password"
@@ -68,7 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     value="<?php if(isset($password1)){echo$password1;}?>">
             </div>
             <div class="form-group">
-                <label for="reenter">Reenter Password</label>
+                <label for="reenter">
+                    <?php echo words('Reenter Password') ?>
+                </label>
                 <i class="fa fa-lock fa-fw"></i>
                 <input
                     type="password"
@@ -78,7 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     value="<?php if(isset($password2)){echo$password2;}?>">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-success btn-sm">Edit</button>
+                <button type="submit" class="btn btn-success btn-sm">
+                    <?php echo words('Edit') ?>
+                </button>
             </div>
         </form>
     </div>

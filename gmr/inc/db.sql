@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2023 at 09:15 PM
+-- Generation Time: Jul 19, 2023 at 03:18 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -51,6 +51,7 @@ INSERT INTO `admins` (`id`, `username`, `pass`, `active`, `type`) VALUES
 CREATE TABLE `customers` (
   `id` int(11) NOT NULL,
   `fullname` text NOT NULL,
+  `cu_location` text NOT NULL,
   `cu_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `active` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -59,9 +60,33 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `fullname`, `cu_date`, `active`) VALUES
-(13, 'ziad', '2023-06-09 06:10:18', 1),
-(14, 'dc', '2023-06-09 18:24:43', 1);
+INSERT INTO `customers` (`id`, `fullname`, `cu_location`, `cu_date`, `active`) VALUES
+(15, 'عالم الصيانة', '', '2023-06-19 17:42:11', 1),
+(16, 'الملاطي', '', '2023-06-19 17:42:16', 1),
+(17, 'الازرق نت', '2', '2023-06-19 17:42:24', 1),
+(18, 'dc', '1', '2023-06-24 19:07:46', 1),
+(19, 'ghjg', '767', '2023-07-05 06:01:35', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `email_names`
+--
+
+CREATE TABLE `email_names` (
+  `id` int(11) NOT NULL,
+  `em_name` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `state` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `email_names`
+--
+
+INSERT INTO `email_names` (`id`, `em_name`, `user_id`, `state`) VALUES
+(1, 'gmail', 37, 0),
+(2, 'khkj', 39, 0);
 
 -- --------------------------------------------------------
 
@@ -71,15 +96,16 @@ INSERT INTO `customers` (`id`, `fullname`, `cu_date`, `active`) VALUES
 
 CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
-  `url_email` tinyint(1) NOT NULL DEFAULT 0
+  `url_email` tinyint(1) NOT NULL DEFAULT 0,
+  `languages` varchar(2) NOT NULL DEFAULT 'en'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `url_email`) VALUES
-(1, 1);
+INSERT INTO `settings` (`id`, `url_email`, `languages`) VALUES
+(1, 1, 'en');
 
 -- --------------------------------------------------------
 
@@ -108,22 +134,27 @@ CREATE TABLE `url_transactions` (
   `phone` text NOT NULL,
   `customer` text NOT NULL,
   `ut_url` varchar(255) NOT NULL,
-  `ut_state` int(1) NOT NULL DEFAULT 0
+  `ut_state` int(1) NOT NULL DEFAULT 0,
+  `checked` tinyint(1) NOT NULL DEFAULT 0,
+  `ut_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `email_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `url_transactions`
 --
 
-INSERT INTO `url_transactions` (`id`, `username`, `phone`, `customer`, `ut_url`, `ut_state`) VALUES
-(9, 'zizusoft', '123456789', 'ziad', 'https://1', 1),
-(10, 'zizusoft', '123456789', 'ziad', 'https://2', 1),
-(11, 'zizusoft', '1234', 'ziad', 'https://3', 1),
-(12, 'zizusoft', '567567', 'dc', 'https://j', 0),
-(13, 'ziad', '57675', 'dc', 'https://hjk', 0),
-(14, 'ziad', '8678', 'dc', 'https://gh', 0),
-(15, 'zizusoft', '44', 'dc', 'https://ff', 1),
-(16, 'amgad', '7567', 'dc', 'https://khjk', 1);
+INSERT INTO `url_transactions` (`id`, `username`, `phone`, `customer`, `ut_url`, `ut_state`, `checked`, `ut_date`, `email_name`) VALUES
+(1, 'زياد صالح علي مظفر', '773715155', 'الازرق نت', 'https://google.com', 0, 0, '2023-06-19 17:56:28', ''),
+(2, 'amgad', '1234545', 'الملاطي', 'https://facebook.com', 0, 0, '2023-06-22 15:04:28', ''),
+(3, 'زياد صالح علي مظفر', '32434234', 'الازرق نت', 'https://hjkhjk', 1, 0, '2023-06-22 16:09:03', ''),
+(4, 'yuigth', '1', 'dc', 'https://fvljvfko', 0, 0, '2023-06-24 19:33:20', 'dffd'),
+(5, 'yuigth', '765675', 'dc', 'https://,fvhkjfd', 0, 0, '2023-06-24 22:21:30', 'gmail'),
+(6, 'yuigth', '656576', 'dc', 'HTTPS://KHJKH', 0, 0, '2023-06-25 20:40:41', 'gmail'),
+(7, 'yuigth', '7578', 'dc', 'https:///dlkfnkjds', 0, 0, '2023-06-25 20:40:53', 'gmail'),
+(8, 'yuigth', '5765765', 'dc', 'https://jhjghj', 1, 0, '2023-06-25 20:41:05', 'gmail'),
+(9, 'yuigth', '75765', 'dc', 'https://fsdfs', 0, 0, '2023-06-25 20:41:12', 'gmail'),
+(10, 'yuigth', '75675', 'dc', 'https://dgfsgfd', 0, 0, '2023-06-25 20:41:18', 'gmail');
 
 -- --------------------------------------------------------
 
@@ -148,9 +179,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `pass`, `phone`, `main_email`, `email`, `us_date`, `active`, `type`) VALUES
-(29, 'zizusoft', 'zs143031', '773715155', 'ziadmuzaffar@gmail.co', '', '2023-06-08 19:26:11', 1, 2),
-(30, 'ziad', 'adminadmin', '6675675', 'admin@admin', 'admin', '2023-06-09 18:25:59', 1, 2),
-(31, 'amgad', 'amgadamgad', '76575', 'ziadmuzaffar@gmail.com', '', '2023-06-09 18:52:27', 1, 2);
+(36, 'زياد صالح علي مظفر', 'zs143031', '773715155', 'ziadmuzaffar@gmail.com', '', '2023-06-19 17:43:06', 1, 2),
+(37, 'amgad', 'amgadamgad', '0025377166383', 'softzizu#gmail.com', '', '2023-06-19 17:57:51', 1, 2),
+(38, 'yuigth', 'yuigthyuigth', '86786', 'f@f', '', '2023-06-24 12:35:18', 1, 2),
+(39, 'fgffhgf', 'fgffhgffgffhgf', '757656', 'fgffhgf@fgffhgf', '', '2023-07-04 06:11:08', 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -167,6 +199,14 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `email_names`
+--
+ALTER TABLE `email_names`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `em_name` (`em_name`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `settings`
@@ -210,7 +250,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `email_names`
+--
+ALTER TABLE `email_names`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -222,23 +268,29 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `url_transactions`
 --
 ALTER TABLE `url_transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `email_names`
+--
+ALTER TABLE `email_names`
+  ADD CONSTRAINT `email_names_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `transactions`

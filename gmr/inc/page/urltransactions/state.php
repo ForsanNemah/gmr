@@ -1,6 +1,7 @@
 <?php
 //
-require 'phpmailer/index.php';
+require '../../lib/phpmailer/index.php';
+include '../../../connect.php';
 //
 if (getItem('url_transactions',id(),'id=?','ut_state')==0) {
     // Edit
@@ -49,13 +50,4 @@ if (getItem('settings',1,'id=?','url_email') == 1) {
     $message .= "اجمالي السحبيات: $withdrawal<br>";
     //
     send_mail("$reciverEmail","GoogleMapReviews@pscye.com","Psc@2023","Get Mony From Gmail",$message,"smtp.hostinger.com","465");
-}
-//
-if (isset($_GET['Customer'])) {
-    header('location: ?Page=View&Customer='.$_GET['Customer']);
-} elseif (isset($_GET['User'])) {
-    header('location: ?Page=View&User='.$_GET['User']);
-    
-} else {
-    header('location: ?Page=View');
 }

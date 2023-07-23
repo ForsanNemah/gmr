@@ -13,29 +13,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = array();
     // UserName Error
     if (empty($username)) {
-        $errors[] = 'Enter User Name';
+        $errors[] = words('Enter User Name');
     } elseif (getCount('admins', 'username = ?', array($username)) > 0 || getCount('users', 'username = ? AND id != ?', array($username, id())) > 0) {
-        $errors[] = 'User Name Is Exists';
+        $errors[] = words('User Name Is Exists');
     }
     // Password Error
     if (empty($password1)) {
-        $errors[] = 'Enter Password';
+        $errors[] = words('Enter Password');
     } elseif (strlen($password1) < 8) {
-        $errors[] = 'Password Cannot Be Less Then 8 Characters';
+        $errors[] = words('Password Cannot Be Less Then 8 Characters');
     } elseif (empty($password2)) {
-        $errors[] = 'Reenter Password';
+        $errors[] = words('Enter Reenter Password');
     } elseif ($password1 != $password2) {
-        $errors[] = 'The Password Is Not Equal';
+        $errors[] = words('The Password Is Not Equal');
     }
     // Phone Error
     if (empty($phone)) {
-        $errors[] = 'Enter Phone Number';
+        $errors[] = words('Enter Phone');
     }
     // Email Error
     if (empty($main)) {
-        $errors[] = 'Enter Main Email';
+        $errors[] = words('Enter Main Email');
     } elseif (getCount('users', 'main_email = ? and id != ?', array($main,id())) > 0) {
-        $errors[] = 'Email Is Exists';
+        $errors[] = words('Email Is Exists');
     }
     // Edit Informatio To Database
     if (empty($errors)) {
@@ -56,21 +56,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!------------------------ Navbar ------------------------>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand">
-            <span><?php echo $pageTitle ?></span>
+            <span><?php echo words($pageTitle) ?></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav <?php echo $navbar ?>-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a
                     class="nav-link btn btn-danger btn-sm"
                     aria-current="page"
                     href="<?php if($_SESSION['idForsan'] == 1){echo '?Page=View';}else{echo 'report.php?Page=View';}?>">
                         <i class="fa fa-chevron-left fa-fw"></i>
-                        <span>Back</span>
+                        <span><?php echo words('Back') ?></span>
                     </a>
                 </li>
             </ul>
@@ -83,7 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!------------------------ Beasic ------------------------>
             <div class="panel">
                 <!------------------------ Title ------------------------>
-                <div class="panel-heading">Add New User</div>
+                <div class="panel-heading">
+                    <?php echo words('Edit User') ?>
+                </div>
                 <!------------------------ Body ------------------------>
                 <div class="panel-body">
                     <!------------------------ Raw ------------------------>
@@ -101,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ User Name ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>User Name</label>
+                                <label><?php echo words('User Name') ?></label>
                                 <input
                                     type="text"
                                     name="username"
@@ -113,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Password ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Password</label>
+                                <label><?php echo words('Password') ?></label>
                                 <input
                                     type="password"
                                     name="password1"
@@ -125,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Reenter Password ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Reenter Password</label>
+                                <label><?php echo words('Reenter Password') ?></label>
                                 <input
                                     type="password"
                                     name="password2"
@@ -137,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Phone ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Phone Number</label>
+                                <label><?php echo words('Phone') ?></label>
                                 <input
                                     type="number"
                                     name="phone"
@@ -149,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Email ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Main Email</label>
+                                <label><?php echo words('Main Email') ?></label>
                                 <input
                                     type="text"
                                     name="main"
@@ -161,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Active ------------------------>
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group">
-                                <label>Active</label>
+                                <label><?php echo words('State') ?></label>
                                 <div class="form-group">
                                     <select name="active" class="form-control">
                                         <option value="0" <?php if(getItem('users',id(),'id=?','active')==0){echo'selected';}?>>Disabled</option>
@@ -173,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!------------------------ Email ------------------------>
                         <div class="col-12">
                             <div class="form-group">
-                                <label>Emails</label>
+                                <label><?php echo words('Emails') ?></label>
                                 <textarea name="email" class="form-control" autocomplete="off" rows="7"><?php if(isset($email)){echo$email;}else{echo getItem('users',id(),'id=?','email');}?></textarea>
                             </div>
                         </div> <!-- Email -->
@@ -181,7 +183,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div> <!-- Body -->
             </div> <!-- Beasic -->
             <div class="form-group">
-                <button type="submit" class="btn btn-success btn-sm">Edit</button>
+                <button type="submit" class="btn btn-success btn-sm">
+                    <?php echo words('Edit') ?>
+                </button>
             </div>
         </div> <!-- Container -->
     </form> <!-- Form -->

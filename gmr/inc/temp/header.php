@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="<?php echo $lang ?>" dir="<?php echo $dir ?>">
     <head>
         <!------------ Charset ------------>
         <meta charset="UTF-8">
@@ -8,7 +8,7 @@
         <!------------ Screen Support ------------>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!------------ Title ------------>
-        <title>Get Mony From Gmail | <?php getTitle() ?></title>
+        <title>Get Mony From Gmail | <?php echo words(getTitle()) ?></title>
         <!------------ CSS library ------------>
         <link rel="stylesheet" href="lay/lib/normalize_v8.0.1.css">
         <link rel="stylesheet" href="lay/lib/bootstrap.rtl.min.css">
@@ -16,5 +16,6 @@
         <link rel="stylesheet" href="lay/lib/chosen.min.css">
         <!------------ CSS Style ------------>
         <link rel="stylesheet" href="lay/css/style.css">
+        <?php echo $style ?>
     </head>
     <body>

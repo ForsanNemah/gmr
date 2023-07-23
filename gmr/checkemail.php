@@ -10,12 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = array();
     // Email Error
     if (empty($reciver_email)) {
-        $errors[] = 'Please, Enter Your Email';
+        $errors[] = words('Enter Email');
     } elseif (getCount('users','main_email=?',array($reciver_email)) == 0) {
-        $errors[] = 'Email Is Not Exists';
+        $errors[] = words('Email Is Not Exists');
     }
     if (empty($errors)) {
-        require 'phpmailer/index.php';
+        require 'inc/lib/phpmailer/index.php';
         $resetPassword = $con->prepare('SELECT username, pass FROM users WHERE main_email = ?');
         $resetPassword->execute(array($reciver_email));
         $fetch = $resetPassword->fetch();
@@ -47,10 +47,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <?php } ?>
         </div> <!-- Success -->
-        <h3>Check Email</h3>
+        <h3>
+            <?php echo words('Check Email') ?>
+        </h3>
         <form action="" method="post">
             <div class="form-group">
-                <label for="username">Email</label>
+                <label for="username">
+                    <?php echo words('Email') ?>
+                </label>
                 <i class="fa fa-message fa-fw"></i>
                 <input
                     required
@@ -63,7 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-sm">Check</button>
             </div>
-            <a href="index.php">Login</a>
+            <a href="index.php">
+                <?php echo words('Login') ?>
+            </a>
         </form>
     </div>
 </div>

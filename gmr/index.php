@@ -17,13 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = array();
     // UserName Error
     if (empty($username)) {
-        $errors[] = 'UserName Can Not Be Empty';
+        $errors[] = words('Enter User Name');
     } elseif (getCount('admins', 'username = ?', array($username)) == 0 && getCount('users', 'username = ?', array($username)) == 0) {
-        $errors[] = 'The UserName Or Password Is Incorrect';
+        $errors[] = words('User Name Or Password Is Incorrect');
     }
     // Password Error
     if (empty($password)) {
-        $errors[] = 'Password Can Not Be Empty';
+        $errors[] = words('Enter Password');
     }
     // If Count > 0 This Main The Database Contain Record About This UserName
     if (getCount('admins', 'username = ? and pass = ?', array($username, $password)) > 0) {
@@ -55,16 +55,14 @@ if (isset($_SESSION['foursna'])&&$_SESSION['idForsan']==1) {
             foreach ($errors as $error) {
                 echo "<div class='alert alert-danger alert-sm'>$error</div>";
             }
-            echo '<br>';
-        }
-        if (isset($_GET['Status'])) {
-            echo "<div class='alert alert-success'>The Account Has Been Created Successfully</div>";
         }
         ?>
-        <h3>Get Mony From Gmail</h3>
+        <h3 class="text-center">Get Mony From Gmail</h3>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username">
+                    <?php echo words('User Name') ?>
+                </label>
                 <i class="fa fa-user fa-fw"></i>
                 <input
                     type="text"
@@ -75,18 +73,26 @@ if (isset($_SESSION['foursna'])&&$_SESSION['idForsan']==1) {
                     autocomplete="off">
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">
+                    <?php echo words('Password') ?>
+                </label>
                 <i class="fa fa-lock fa-fw"></i>
                 <input type="password" name="password" id="password" class="form-control" autocomplete="off">
                 <i class="fa fa-eye" id="showPassword"></i>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-sm">Login</button>
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <?php echo words('Login') ?>
+                </button>
             </div>
         </form>
         <div class="anchor">
-            <a href="accounts.php?Page=Add">Create Account</a>
-            <a href="checkemail.php">Forget Password</a>
+            <a href="accounts.php?Page=Add">
+                <?php echo words('Create New Account') ?>
+            </a>
+            <a href="checkemail.php">
+                <?php echo words('Forget Password') ?>
+            </a>
         </div>
     </div>
 </div>

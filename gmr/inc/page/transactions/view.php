@@ -19,26 +19,25 @@ foreach (getData('transactions',$where,$value) as $all) {
     <!------------------------ Navbar ------------------------>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand">
-            <span><?php echo $pageTitle ?></span>
+            <span><?php echo words($pageTitle) ?></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav <?php echo $navbar ?>-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link btn btn-dark btn-sm" aria-current="page" href="#" id="search">
                         <i class="fa fa-search fa-fw"></i>
-                        <span>Search</span>
+                        <span><?php echo words('Search') ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="#">
                         <i class="fa fa-sack-dollar fa-fw"></i>
                         <span>
-                            Total :
-                            <?php echo getCount('url_transactions',"ut_state=1 and $urlWhere", $urlValue) ?>
+                            <?php echo words('Total') . ' : ' . getCount('url_transactions',"ut_state=1 and $urlWhere", $urlValue) ?>
                         </span>
                     </a>
                 </li>
@@ -46,8 +45,7 @@ foreach (getData('transactions',$where,$value) as $all) {
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="#">
                         <i class="fa fa-sack-dollar fa-fw"></i>
                         <span>
-                            Remaining :
-                            <?php echo getCount('url_transactions',"ut_state=1 and $urlWhere", $urlValue) - $remaining?>
+                            <?php echo words('Remaining') . ' : ' . getCount('url_transactions',"ut_state=1 and $urlWhere", $urlValue) - $remaining?>
                         </span>
                     </a>
                 </li>
@@ -55,8 +53,7 @@ foreach (getData('transactions',$where,$value) as $all) {
                     <a class="nav-link btn btn-primary btn-sm" aria-current="page" href="#">
                         <i class="fa fa-sack-dollar fa-fw"></i>
                         <span>
-                            Withdrawal :
-                            <?php echo $remaining ?>
+                            <?php echo words('Withdrawal') . ' : ' . $remaining ?>
                         </span>
                     </a>
                 </li>
@@ -78,12 +75,12 @@ foreach (getData('transactions',$where,$value) as $all) {
                 <!------------------------ Table Head ------------------------>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">UserName</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Balance</th>
-                        <th scope="col">Date</th>
+                        <th scope="col"><?php echo words('#') ?></th>
+                        <th scope="col"><?php echo words('User Name') ?></th>
+                        <th scope="col"><?php echo words('Customer') ?></th>
+                        <th scope="col"><?php echo words('Description') ?></th>
+                        <th scope="col"><?php echo words('Balance') ?></th>
+                        <th scope="col"><?php echo words('Add Date') ?></th>
                     </tr>
                 </thead> <!-- Table Head -->
                 <!------------------------ Table Body ------------------------>

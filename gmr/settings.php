@@ -12,6 +12,9 @@ if (isset($_SESSION['foursan'])&&$_SESSION['idForsan']==1) {
     } elseif (filterPage() == 'Url') {
         $pageTitle = 'Settings Email';
         include $pageSettings . 'url.php';
+    } elseif (filterPage() == 'Languages') {
+        $pageTitle = 'Settings Languages';
+        include $pageSettings . 'languages.php';
     }
     // Include Footer File
     include $footer;
