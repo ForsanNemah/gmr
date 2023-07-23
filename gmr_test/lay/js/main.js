@@ -69,5 +69,8 @@ $(document).ready(function () {
     });
     //
     var clipboard = new ClipboardJS('.copy');
+    // $('a[href="#copy"]').click(function () {
+    //     $(this).hide();
+    // });
     /*****************************************************/
 });

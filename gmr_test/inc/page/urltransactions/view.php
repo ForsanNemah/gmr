@@ -87,7 +87,6 @@ if (isset($_GET['Customer'])) {
                         <td><?php echo $all['ut_date'] ?></td>
                         <td>
                             <a
-                                href="?Page=View"
                                 class="btn btn-primary btn-sm copy" 
                                 data-clipboard-action="copy"
                                 data-clipboard-target="#foo<?php echo $all['id']?>">
@@ -110,7 +109,7 @@ if (isset($_GET['Customer'])) {
                                 <i class="fa fa-xmark fa-fw"></i>
                             </a>
                             <?php } ?>
-                            <a href="https://wa.me/<?php echo$all['phone']?>" class="btn btn-sm">
+                            <a href="https://wa.me/<?php echo$all['phone']?>" class="btn btn-sm" target="_blank">
                                 <img src="lay/img/whatsapp.png" alt="whatsapp" width="30" height="30">
                             </a>
                         </td>
