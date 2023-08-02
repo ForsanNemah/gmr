@@ -310,19 +310,35 @@ include 'info.php';
  
 
 
-                      <a href="../../gmr/index.php">
+      <div  >
+
+
+      <a href="../../gmr/index.php">
                                     <button   class="btn btn-info"> انشاء حساب </button>
 
                                     </a>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+      </div>          
 
-<br>
-<br>
+ 
 
+
+<div  >
 
 <a href="<?php include 'info.php';echo $location_url;?>">
                                     <button   class="btn btn-info"> فتح رابط التقييم</button>
 
                                     </a>
+
+</div>
+
+
+
+
+
 
 
 
@@ -778,6 +794,32 @@ $(document).ready(function () {
 
 
 
+    
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //
 
@@ -793,9 +835,24 @@ success: function(data) {
    //alert(data);
 
 
+   $('#email_name_id')
+    .empty()
+    .append('<option selected="selected" value="test">White</option>');
+
+
+
+ 
+
+
+
    for (var i = 0; i < data.length; i++) {
          
 		 //alert(data[i].em_name);
+
+
+
+
+
 
 
          $('#email_name_id').append($('<option>', {
