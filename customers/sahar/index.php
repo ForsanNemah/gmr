@@ -836,8 +836,8 @@ success: function(data) {
 
 
    $('#email_name_id')
-    .empty()
-    .append('<option selected="selected" value="test">White</option>');
+    .empty();
+   
 
 
 
